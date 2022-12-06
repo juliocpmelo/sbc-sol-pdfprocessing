@@ -8,9 +8,10 @@ To fill the Artigos, Autores and Referencias files the publication chair needs t
 
 # Input
 
-The pdf files of a specific track should should be in a folder together with the autores text file.
+The pdf files of a specific track should should be in a folder together with the __autores__ text file. The pdf files should be in the format "1.pdf", "2.pdf", ..., where the number is an integer. We
+use this format to help in the proceedings organization, the file number is used to generate the __refs__, __abstract__ and __resmumo__ files.
 
-The autores text file is a auxiliar file used to generate the autores_final that contains the author metadata. This file is organized as follows:
+The __autores__ text file is a auxiliar file used to generate the autores_final that contains the author metadata. This file is organized as follows:
 
 Paper index: The index of the paper this author appears on. This number is extracted while filling initial data on the Artigos.xlsx file. I is an integer that identifies the paper.
 Author names: A list of author names with their affiliation within parenthesis, separated by ';'.
@@ -23,7 +24,22 @@ To generate this auxiliar file I used available information on the conference pu
 
 # Usage and Output
 
-pip install install.txt
-python .\processfiles.py .\data\demo
+```
+pip install -r requirements.txt
+python ./processfiles.py ./demo
+```
 
-Inside the demo folder 3 files will be generated containing the abstract.txt, resumo.txt, refs.txt, autores_final.txt. Containing the references, resumo and palavras-chave(pt-br), abstract and keywords the autores_final file contains the author meta-data.
+After the execution, 3 files will be generated inside the _demo_ folder: abstract.txt, resumo.txt, refs.txt and autores_final.txt. 
+
+The __refs.txt__ file contains the references, in the format <file_idx> <ref_line>, this format is used because the pdf files break the references in many lines, one have to join them accordingly. To
+do so I use a procces in google sheets (just joins the selected lines on the first one with ' ', then deletes all selected lines except the first).
+
+The __abstract.txt__ contains the abstract if it can be found. The abstract is the text between the word "Abstract" and the begining of the the "Keywords". This file contains text within these marks,
+if they can be found. This file also contains the keyworsd if they can be found. The file is organized as <file_idx>\n<abstract>\n<keywords>
+
+The __resumo.txt__ contains the "resumo(pt-br)" abstract and keywords the autores_final file contains the author meta-data.
+
+# Work in progress
+
+As you can see there are tons of improvement to be made, not only because of the latin letters and accents, but in the text processing in overall. Even with those
+issues, I used these scripts to build the proceedings of the XXI Brazilian Conference on Games and Digital Entertainment (SBGames 2022), which was a lot of work still.

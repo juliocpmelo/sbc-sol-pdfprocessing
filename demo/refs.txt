@@ -1,0 +1,13 @@
+1	Bibliographic references must be unambiguous and uniform. We recommend giving the
+1	author names references in brackets, e.g. [Knuth 1984], [Boulic and Renault 1991], and
+1	[Smith and Jones 1999].
+1	The references must be listed using 12 point font size, with 6 points of space
+1	before each reference. The first line of each reference should not be indented, while the
+1	subsequent should be indented by 0.5 cm.
+1	Refer ˆencias
+1	Boulic, R. and Renault, O. (1991). 3d hierarchies for animation. In Magnenat-Thalmann,
+1	N. and Thalmann, D., editors, New Trends in Animation and Visualization . John Wiley
+1	& Sons ltd.
+1	Knuth, D. E. (1984). The T EX Book . Addison-Wesley, 15th edition.
+1	Smith, A. and Jones, B. (1999). On the complexity of computing. In Smith-Jones, A. B.,
+1	editor, Advances in Computer Science , pages 555–566. Publishing Press.
