@@ -29,15 +29,30 @@ pip install -r requirements.txt
 python ./processfiles.py ./demo
 ```
 
-After the execution, 3 files will be generated inside the _demo_ folder: abstract.txt, resumo.txt, refs.txt and autores_final.txt. 
+After the execution, 4 files will be generated inside the _demo_ folder: abstract.txt, resumo.txt, refs.txt and autores_final.txt. 
 
 The __refs.txt__ file contains the references, in the format <file_idx> <ref_line>, this format is used because the pdf files break the references in many lines, one have to join them accordingly. To
 do so I use a procces in google sheets (just joins the selected lines on the first one with ' ', then deletes all selected lines except the first).
 
 The __abstract.txt__ contains the abstract if it can be found. The abstract is the text between the word "Abstract" and the begining of the the "Keywords". This file contains text within these marks,
-if they can be found. This file also contains the keyworsd if they can be found. The file is organized as <file_idx>\n<abstract>\n<keywords>
+if they can be found. This file also contains the keyworsd if they can be found. The file is organized as:
 
-The __resumo.txt__ contains the "resumo(pt-br)" abstract and keywords the autores_final file contains the author meta-data.
+```
+<file_idx> - <file_num_pages>\n<file_abstract>\n<file_keywords>
+```
+Ex:
+```
+1 - 4
+Abstract. This meta-paper describes the style to be used in articles and
+short papers for SBC conferences. For papers in English, you should add
+just an abstract while for the papers in Portuguese, we also ask for an
+abstract in Portuguese (“resumo”). In both cases, abstracts should not
+have more than 10 lines and must be in the first page of the paper. Af-
+ter the abstract authors should also include the keywords in English.
+Keywords— one, two, three, four
+```
+
+The __resumo.txt__ contains the "resumo(pt-br)" and "palavras chave(pt-br)", in the same format as the abstract.txt.
 
 # Work in progress
 
